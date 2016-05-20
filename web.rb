@@ -5,7 +5,7 @@ class Lookup < Sinatra::Base
     body = JSON.parse(request.body.read)
     message = body["item"]["message"]["message"]
     code = message[5..-1]
-    resp = Faraday.get("http://icd10api.com/?code=#{code}&r=json&desc=short")
+    resp = Faraday.get("http://icd10api.com/?code=#{code}&r=json&desc=long")
     data = JSON.parse(resp.body)
 
     if data.has_key?("Error")
