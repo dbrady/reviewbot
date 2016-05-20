@@ -8,8 +8,14 @@ class Lookup < Sinatra::Base
     resp = Faraday.get("http://icd10api.com/?code=#{code}&r=json&desc=short")
     data = JSON.parse(resp.body)
 
+    if data.has_key?("Error")
+      message = "Sorry I can't find that ICD Code :("
+    else
+      message = data["Description"]
+    end
+
     response = {
-      message: data["Description"],
+      message: message,
       notify: false,
       message_format: "text"
     }.to_json
