@@ -23,5 +23,19 @@ class Lookup < Sinatra::Base
     content_type :json
     response
   end
+
+  post '/reviewer' do
+    people = ["Chad", "Corey", "DJ", "Dave", "Jennifer", "Robert", "TJ"]
+    reviewer = people.sample
+
+    response = {
+      message: "Your reviewer is: #{reviewer}",
+      notify: false,
+      message_format: "text",
+    }.to_json
+
+    content_type :json
+    response
+  end
 end
 
