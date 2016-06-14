@@ -25,7 +25,7 @@ class Lookup < Sinatra::Base
   end
 
   post '/reviewer' do
-    people = ["Chad", "Corey", "DJ", "Dave", "Jennifer", "Robert", "TJ"]
+    people = ["@chad", "@cwoodcox", "@DJDestefano", "@DaveBrady", "@JenniferPayne", "@RobertLude", "@TJEakle"]
     reviewer = people.sample
 
     response = {
