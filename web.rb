@@ -1,5 +1,7 @@
 require 'json'
 
+require_relative './lib/commands/reviewer'
+
 class Lookup < Sinatra::Base
   post '/lookup' do
     body = JSON.parse(request.body.read)
@@ -25,28 +27,12 @@ class Lookup < Sinatra::Base
   end
 
   post '/reviewer' do
-    people = %w[
-      @chad
-      @cwoodcox
-      @DJDestefano
-      @DaveBrady
-      @JenniferPayne
-      @RobertLude
-      @TJEakle
-      @JohnMarks
-      @ValerieShoskes
-    ]
-
-    reviewer = people.sample
-
-    response = {
-      message: "Your reviewer is: #{reviewer}",
-      notify: false,
-      message_format: "text",
-    }.to_json
-
     content_type :json
-    response
+    Command::Reviewer.ehr_rest_squad request
+  end
+
+  post '/ehr-rest-reviewer' do
+    content_type :json
+    Command::Reviewer.ehr_rest_squad request
   end
 end
-
