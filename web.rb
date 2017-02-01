@@ -35,4 +35,15 @@ class Lookup < Sinatra::Base
     content_type :json
     Command::Reviewer.ehr_rest_squad request
   end
+
+  post '/chad' do
+    content_type :json
+    response = {
+      message: "wouldn't you like to know",
+      notify: false,
+      message_format: "text"
+    }.to_json
+
+    response
+  end
 end
