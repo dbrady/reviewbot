@@ -18,8 +18,6 @@ class Command::Reviewer < Command
       RobertLude
       TJEakle
       ValerieShoskes
-      chad
-      cwoodcox
     ],
   ]
 
