@@ -12,6 +12,7 @@ class Command::Reviewer < Command
   GROUPS = IceNine.deep_freeze Hash[
     ehr_rest_squad: %w[
       DaveBrady
+      HannahRead
       JenniferPayne
       JohnMarks
       RobertLude
