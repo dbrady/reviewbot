@@ -17,7 +17,6 @@ class Command::Reviewer < Command
       JohnMarks
       RobertLude
       TJEakle
-      ValerieShoskes
     ],
   ]
 
