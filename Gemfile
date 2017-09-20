@@ -1,7 +1,8 @@
 source "https://rubygems.org"
 
-ruby "2.0.0"
+# Legacy version to match my work machine
+ruby "2.2.2"
 
-gem 'sinatra', '1.4.7'
 gem 'faraday'
 gem 'ice_nine'
+gem 'sinatra', '1.4.7'

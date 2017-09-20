@@ -22,8 +22,5 @@ DEPENDENCIES
   ice_nine
   sinatra (= 1.4.7)
 
-RUBY VERSION
-   ruby 2.0.0p576
-
 BUNDLED WITH
    1.13.6

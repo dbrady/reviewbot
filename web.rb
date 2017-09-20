@@ -7,4 +7,9 @@ class Lookup < Sinatra::Base
     content_type :json
     Command::Reviewer.ehr_rest_squad request
   end
+
+  get '/poo' do
+    # You do Hello World YOUR way, I'll do it mine
+    "One time I went poo so hard it ran down into my shoe"
+  end
 end
